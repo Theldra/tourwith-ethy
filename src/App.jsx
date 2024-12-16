@@ -14,6 +14,7 @@ import LoginPage from './components/LoginPage';
 import Register from './components/Register';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   return (
@@ -32,8 +33,8 @@ function App() {
               <Route path="/build-package" element={<PackageBuilderPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<Register />} />
-              <Route 
-                path="/admin" 
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/admin" 
                 element={
                   <PrivateRoute requiredPermissions={['manage_tours', 'manage_users']}>
                     <AdminDashboard />

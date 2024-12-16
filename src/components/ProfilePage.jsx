@@ -1,11 +1,10 @@
 import React from 'react';
 
 const ProfilePage = () => {
-  // This is a placeholder for user data. In a real application, you would fetch this from your backend.
   const user = {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    joinDate: '2023-01-01',
+    name: 'Ama Asante',
+    email: 'amaasante@gmail.com',
+    joinDate: '2024-01-01',
     bookings: [
       { id: 1, tour: 'Kakum National Park Adventure', date: '2023-07-15' },
       { id: 2, tour: 'Cape Coast Castle Tour', date: '2023-08-22' },

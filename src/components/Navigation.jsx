@@ -2,6 +2,7 @@ import { FiMenu, FiSearch, FiUser } from 'react-icons/fi';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import tourlogo from  "../assets/images/ourlogo.png"
 
 export function Navigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,8 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-indigo-600">T.W.E</span>
+              <img src={tourlogo} alt="twe-logo" className='w-20 h-10' />
+              {/* <span className="text-2xl font-bold text-indigo-600">T.W.E</span> */}
             </div>
   
             {/* Desktop Navigation */}
@@ -30,7 +32,9 @@ export function Navigation() {
                 <FiSearch className="h-5 w-5 text-gray-600" />
               </button>
               <button className="p-2 hover:bg-gray-100 rounded-full">
-                <FiUser className="h-5 w-5 text-gray-600" />
+              <Link to="/login" className="text-gray-700 hover:text-indigo-600 px-3 py-2">
+              <FiUser className="h-5 w-5 text-gray-600" />
+            </Link>
               </button>
               <button 
                 className="md:hidden p-2 hover:bg-gray-100 rounded-full"
@@ -55,7 +59,7 @@ export function Navigation() {
           </div>
         )}
         <div className="flex items-center">
-          {user ? (
+          {user && (
             <>
               {user.role === 'admin' && (
                 <Link to="/admin" className="text-gray-700 hover:text-indigo-600 px-3 py-2">
@@ -69,10 +73,6 @@ export function Navigation() {
                 Logout
               </button>
             </>
-          ) : (
-            <Link to="/login" className="text-gray-700 hover:text-indigo-600 px-3 py-2">
-              Login
-            </Link>
           )}
         </div>
       </nav>

@@ -106,7 +106,6 @@ function DestinationsPage() {
   };
 
   useEffect(() => {
-    // Get user's location when component mounts
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -123,15 +122,14 @@ function DestinationsPage() {
   }, []);
 
   const handleImageError = (e) => {
-    e.target.src = 'https://images.unsplash.com/photo-1624821558130-b325d7946fc4'; // Default Ghana tourism image
-    e.target.onerror = null; // Prevents infinite loop if default image also fails
+    e.target.src = 'https://images.unsplash.com/photo-1624821558130-b325d7946fc4'; 
   };
 
   return (
     <div className="pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
-          tourwith-ethy Ghana Tours
+          T.W.E
         </h1>
         
         {/* Region Filter */}
